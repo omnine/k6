@@ -94,72 +94,6 @@ export default function () {
       });
 
       response = http.get(
-        "https://dualshield6.deepnetsecurity.com/dac/styles.6b1428736e3f5582512b.css",
-        {
-          headers: {
-            Referer: "https://dualshield6.deepnetsecurity.com/dac/",
-            "User-Agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-          },
-        }
-      );
-
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/dac/assets/img/logo.png",
-        {
-          headers: {
-            Referer: "https://dualshield6.deepnetsecurity.com/dac/",
-            "User-Agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-          },
-        }
-      );
-
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/dac/runtime.fa98e1f653221de325cb.js",
-        {
-          headers: {
-            Referer: "https://dualshield6.deepnetsecurity.com/dac/",
-            "User-Agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-          },
-        }
-      );
-
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/dac/polyfills.33f203e11b07cdb3a0be.js",
-        {
-          headers: {
-            Referer: "https://dualshield6.deepnetsecurity.com/dac/",
-            "User-Agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-          },
-        }
-      );
-
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/dac/scripts.c707374377f6fc38654b.js",
-        {
-          headers: {
-            Referer: "https://dualshield6.deepnetsecurity.com/dac/",
-            "User-Agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-          },
-        }
-      );
-
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/dac/main.62945a358109726dea06.js",
-        {
-          headers: {
-            Referer: "https://dualshield6.deepnetsecurity.com/dac/",
-            "User-Agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-          },
-        }
-      );
-
-      response = http.get(
         "https://dualshield6.deepnetsecurity.com/dac/api/userinfo",
         {
           headers: {
@@ -170,94 +104,6 @@ export default function () {
             "sec-fetch-site": "same-origin",
             "sec-fetch-mode": "cors",
             "sec-fetch-dest": "empty",
-            referer: "https://dualshield6.deepnetsecurity.com/dac/",
-            "accept-encoding": "gzip, deflate, br",
-            "accept-language":
-              "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-            cookie:
-              "JSESSIONID=59A9FC7C830DE6F4BB1F563A2C51B69E; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-          },
-        }
-      );
-
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/dac/assets/i18n/messages.json",
-        {
-          headers: {
-            accept: "application/json, text/plain, */*",
-            "user-agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-            "content-type": "application/json",
-            "sec-fetch-site": "same-origin",
-            "sec-fetch-mode": "cors",
-            "sec-fetch-dest": "empty",
-            referer: "https://dualshield6.deepnetsecurity.com/dac/",
-            "accept-encoding": "gzip, deflate, br",
-            "accept-language":
-              "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-            cookie:
-              "JSESSIONID=59A9FC7C830DE6F4BB1F563A2C51B69E; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-          },
-        }
-      );
-
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/dac/assets/i18n/en_help.html",
-        {
-          headers: {
-            accept: "application/json, text/plain, */*",
-            "user-agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-            "content-type": "application/json",
-            "sec-fetch-site": "same-origin",
-            "sec-fetch-mode": "cors",
-            "sec-fetch-dest": "empty",
-            referer: "https://dualshield6.deepnetsecurity.com/dac/",
-            "accept-encoding": "gzip, deflate, br",
-            "accept-language":
-              "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-            cookie:
-              "JSESSIONID=59A9FC7C830DE6F4BB1F563A2C51B69E; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-          },
-        }
-      );
-
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/dac/assets/i18n/en_help.html",
-        {
-          headers: {
-            Accept: "application/json, text/plain, */*",
-            Referer: "https://dualshield6.deepnetsecurity.com/dac/",
-            "User-Agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-            "Content-Type": "application/json",
-          },
-        }
-      );
-
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/dac/assets/i18n/en_help.html",
-        {
-          headers: {
-            Accept: "application/json, text/plain, */*",
-            Referer: "https://dualshield6.deepnetsecurity.com/dac/",
-            "User-Agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-            "Content-Type": "application/json",
-          },
-        }
-      );
-
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/dac/themes/clr-ui.min.css",
-        {
-          headers: {
-            "user-agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-            accept: "text/css,*/*;q=0.1",
-            "sec-fetch-site": "same-origin",
-            "sec-fetch-mode": "no-cors",
-            "sec-fetch-dest": "style",
             referer: "https://dualshield6.deepnetsecurity.com/dac/",
             "accept-encoding": "gzip, deflate, br",
             "accept-language":
@@ -300,26 +146,6 @@ export default function () {
             "sec-fetch-site": "same-origin",
             "sec-fetch-mode": "cors",
             "sec-fetch-dest": "empty",
-            referer: "https://dualshield6.deepnetsecurity.com/dac",
-            "accept-encoding": "gzip, deflate, br",
-            "accept-language":
-              "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-            cookie:
-              "JSESSIONID=59A9FC7C830DE6F4BB1F563A2C51B69E; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-          },
-        }
-      );
-
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/dac/assets/img/DualShieldLogo.png",
-        {
-          headers: {
-            "user-agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-            accept: "image/webp,image/apng,image/*,*/*;q=0.8",
-            "sec-fetch-site": "same-origin",
-            "sec-fetch-mode": "no-cors",
-            "sec-fetch-dest": "image",
             referer: "https://dualshield6.deepnetsecurity.com/dac",
             "accept-encoding": "gzip, deflate, br",
             "accept-language":
@@ -444,26 +270,6 @@ export default function () {
         }
       );
 
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/dac/assets/i18n/messages_en_US.json",
-        {
-          headers: {
-            accept: "application/json, text/plain, */*",
-            "user-agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-            "content-type": "application/json",
-            "sec-fetch-site": "same-origin",
-            "sec-fetch-mode": "cors",
-            "sec-fetch-dest": "empty",
-            referer: "https://dualshield6.deepnetsecurity.com/dac",
-            "accept-encoding": "gzip, deflate, br",
-            "accept-language":
-              "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-            cookie:
-              "JSESSIONID=59A9FC7C830DE6F4BB1F563A2C51B69E; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-          },
-        }
-      );
 
       response = http.post(
         "https://dualshield6.deepnetsecurity.com/dac/api/licence/queryLicenceStats",
@@ -574,152 +380,6 @@ export default function () {
         }
       );
 
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/sso/styles.0d5f9d90080c15227dd5.css",
-        {
-          headers: {
-            "user-agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-            accept: "text/css,*/*;q=0.1",
-            "sec-fetch-site": "same-origin",
-            "sec-fetch-mode": "no-cors",
-            "sec-fetch-dest": "style",
-            referer:
-              "https://dualshield6.deepnetsecurity.com/sso/?tabid=TabID_f76f898c-0049-43c9-ac14-a1b20114fb50&DASApplicationName=Management+Console",
-            "accept-encoding": "gzip, deflate, br",
-            "accept-language":
-              "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-            cookie:
-              "JSESSIONID=492634A12B9D59C2323CA78470BE5C54; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-          },
-        }
-      );
-
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/sso/runtime.67ed2dced2e1e51c85f7.js",
-        {
-          headers: {
-            "user-agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-            accept: "*/*",
-            "sec-fetch-site": "same-origin",
-            "sec-fetch-mode": "no-cors",
-            "sec-fetch-dest": "script",
-            referer:
-              "https://dualshield6.deepnetsecurity.com/sso/?tabid=TabID_f76f898c-0049-43c9-ac14-a1b20114fb50&DASApplicationName=Management+Console",
-            "accept-encoding": "gzip, deflate, br",
-            "accept-language":
-              "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-            cookie:
-              "JSESSIONID=492634A12B9D59C2323CA78470BE5C54; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-          },
-        }
-      );
-
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/sso/polyfills.2425329b8b62a0e06946.js",
-        {
-          headers: {
-            "user-agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-            accept: "*/*",
-            "sec-fetch-site": "same-origin",
-            "sec-fetch-mode": "no-cors",
-            "sec-fetch-dest": "script",
-            referer:
-              "https://dualshield6.deepnetsecurity.com/sso/?tabid=TabID_f76f898c-0049-43c9-ac14-a1b20114fb50&DASApplicationName=Management+Console",
-            "accept-encoding": "gzip, deflate, br",
-            "accept-language":
-              "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-            cookie:
-              "JSESSIONID=492634A12B9D59C2323CA78470BE5C54; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-          },
-        }
-      );
-
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/sso/scripts.6cf4da7113bcd1218d80.js",
-        {
-          headers: {
-            "user-agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-            accept: "*/*",
-            "sec-fetch-site": "same-origin",
-            "sec-fetch-mode": "no-cors",
-            "sec-fetch-dest": "script",
-            referer:
-              "https://dualshield6.deepnetsecurity.com/sso/?tabid=TabID_f76f898c-0049-43c9-ac14-a1b20114fb50&DASApplicationName=Management+Console",
-            "accept-encoding": "gzip, deflate, br",
-            "accept-language":
-              "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-            cookie:
-              "JSESSIONID=492634A12B9D59C2323CA78470BE5C54; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-          },
-        }
-      );
-
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/sso/main.5dc0394bcb6f67f7ff1c.js",
-        {
-          headers: {
-            "user-agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-            accept: "*/*",
-            "sec-fetch-site": "same-origin",
-            "sec-fetch-mode": "no-cors",
-            "sec-fetch-dest": "script",
-            referer:
-              "https://dualshield6.deepnetsecurity.com/sso/?tabid=TabID_f76f898c-0049-43c9-ac14-a1b20114fb50&DASApplicationName=Management+Console",
-            "accept-encoding": "gzip, deflate, br",
-            "accept-language":
-              "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-            cookie:
-              "JSESSIONID=492634A12B9D59C2323CA78470BE5C54; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-          },
-        }
-      );
-
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/sso/assets/lang/messages.json",
-        {
-          headers: {
-            accept: "application/json, text/plain, */*",
-            "user-agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-            "sec-fetch-site": "same-origin",
-            "sec-fetch-mode": "cors",
-            "sec-fetch-dest": "empty",
-            referer:
-              "https://dualshield6.deepnetsecurity.com/sso/?tabid=TabID_f76f898c-0049-43c9-ac14-a1b20114fb50&DASApplicationName=Management+Console",
-            "accept-encoding": "gzip, deflate, br",
-            "accept-language":
-              "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-            cookie:
-              "JSESSIONID=492634A12B9D59C2323CA78470BE5C54; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-          },
-        }
-      );
-
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/sso/assets/lang/messages_en_US.json",
-        {
-          headers: {
-            accept: "application/json, text/plain, */*",
-            "user-agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-            "sec-fetch-site": "same-origin",
-            "sec-fetch-mode": "cors",
-            "sec-fetch-dest": "empty",
-            referer:
-              "https://dualshield6.deepnetsecurity.com/sso/?tabid=TabID_f76f898c-0049-43c9-ac14-a1b20114fb50&DASApplicationName=Management+Console",
-            "accept-encoding": "gzip, deflate, br",
-            "accept-language":
-              "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-            cookie:
-              "JSESSIONID=492634A12B9D59C2323CA78470BE5C54; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-          },
-        }
-      );
 
       response = http.get(
         "https://dualshield6.deepnetsecurity.com/sso/v1/authc/getCustomizationConfigs",
@@ -765,45 +425,6 @@ export default function () {
         }
       );
 
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/sso/assets/img/logo.png",
-        {
-          headers: {
-            "user-agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-            accept: "image/webp,image/apng,image/*,*/*;q=0.8",
-            "sec-fetch-site": "same-origin",
-            "sec-fetch-mode": "no-cors",
-            "sec-fetch-dest": "image",
-            referer: "https://dualshield6.deepnetsecurity.com/sso/",
-            "accept-encoding": "gzip, deflate, br",
-            "accept-language":
-              "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-            cookie:
-              "JSESSIONID=492634A12B9D59C2323CA78470BE5C54; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-          },
-        }
-      );
-
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/sso/assets/img/favicon.png?faviconCacheBust=1594888876344",
-        {
-          headers: {
-            "user-agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-            accept: "image/webp,image/apng,image/*,*/*;q=0.8",
-            "sec-fetch-site": "same-origin",
-            "sec-fetch-mode": "no-cors",
-            "sec-fetch-dest": "image",
-            referer: "https://dualshield6.deepnetsecurity.com/sso/",
-            "accept-encoding": "gzip, deflate, br",
-            "accept-language":
-              "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-            cookie:
-              "JSESSIONID=492634A12B9D59C2323CA78470BE5C54; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-          },
-        }
-      );
 
       response = http.get(
         "https://dualshield6.deepnetsecurity.com/sso/v1/authc/hasIceLogonSteps?appName=Management+Console&appName=Management%2520Console",
@@ -828,27 +449,6 @@ export default function () {
         }
       );
 
-      response = http.get(
-        "https://www.deepnetsecurity.com/wp-content/uploads/2014/03/DevicePass.png",
-        {
-          headers: {
-            Host: "www.deepnetsecurity.com",
-            Connection: "keep-alive",
-            "User-Agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-            Accept: "image/webp,image/apng,image/*,*/*;q=0.8",
-            "Sec-Fetch-Site": "same-site",
-            "Sec-Fetch-Mode": "no-cors",
-            "Sec-Fetch-Dest": "image",
-            Referer: "https://dualshield6.deepnetsecurity.com/sso/",
-            "Accept-Encoding": "gzip, deflate, br",
-            "Accept-Language":
-              "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-            Cookie:
-              "_ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede",
-          },
-        }
-      );
 
       response = http.get(
         "https://dualshield6.deepnetsecurity.com/sso/v1/authc/domainList?appName=Management+Console&appName=Management%2520Console",
@@ -909,26 +509,6 @@ export default function () {
             "sec-fetch-site": "same-origin",
             "sec-fetch-mode": "cors",
             "sec-fetch-dest": "empty",
-            referer: "https://dualshield6.deepnetsecurity.com/sso/",
-            "accept-encoding": "gzip, deflate, br",
-            "accept-language":
-              "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-            cookie:
-              "JSESSIONID=492634A12B9D59C2323CA78470BE5C54; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-          },
-        }
-      );
-
-      response = http.get(
-        "https://dualshield6.deepnetsecurity.com/sso/21.fffd0dbac5fb7caaa07f.js",
-        {
-          headers: {
-            "user-agent":
-              "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-            accept: "*/*",
-            "sec-fetch-site": "same-origin",
-            "sec-fetch-mode": "no-cors",
-            "sec-fetch-dest": "script",
             referer: "https://dualshield6.deepnetsecurity.com/sso/",
             "accept-encoding": "gzip, deflate, br",
             "accept-language":
@@ -1053,114 +633,8 @@ export default function () {
           "JSESSIONID=49EE8EDF9BF4A4444F3D4FBDCB57DF74; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
       },
     });
-    response = http.get(
-      "https://dualshield6.deepnetsecurity.com/dac/styles.6b1428736e3f5582512b.css",
-      {
-        headers: {
-          "user-agent":
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-          accept: "text/css,*/*;q=0.1",
-          "sec-fetch-site": "same-origin",
-          "sec-fetch-mode": "no-cors",
-          "sec-fetch-dest": "style",
-          referer: "https://dualshield6.deepnetsecurity.com/dac/",
-          "accept-encoding": "gzip, deflate, br",
-          "accept-language": "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-          cookie:
-            "JSESSIONID=49EE8EDF9BF4A4444F3D4FBDCB57DF74; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-        },
-      }
-    );
-    response = http.get(
-      "https://dualshield6.deepnetsecurity.com/dac/assets/img/logo.png",
-      {
-        headers: {
-          "user-agent":
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-          accept: "image/webp,image/apng,image/*,*/*;q=0.8",
-          "sec-fetch-site": "same-origin",
-          "sec-fetch-mode": "no-cors",
-          "sec-fetch-dest": "image",
-          referer: "https://dualshield6.deepnetsecurity.com/dac/",
-          "accept-encoding": "gzip, deflate, br",
-          "accept-language": "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-          cookie:
-            "JSESSIONID=49EE8EDF9BF4A4444F3D4FBDCB57DF74; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-        },
-      }
-    );
-    response = http.get(
-      "https://dualshield6.deepnetsecurity.com/dac/runtime.fa98e1f653221de325cb.js",
-      {
-        headers: {
-          "user-agent":
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-          accept: "*/*",
-          "sec-fetch-site": "same-origin",
-          "sec-fetch-mode": "no-cors",
-          "sec-fetch-dest": "script",
-          referer: "https://dualshield6.deepnetsecurity.com/dac/",
-          "accept-encoding": "gzip, deflate, br",
-          "accept-language": "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-          cookie:
-            "JSESSIONID=49EE8EDF9BF4A4444F3D4FBDCB57DF74; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-        },
-      }
-    );
-    response = http.get(
-      "https://dualshield6.deepnetsecurity.com/dac/polyfills.33f203e11b07cdb3a0be.js",
-      {
-        headers: {
-          "user-agent":
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-          accept: "*/*",
-          "sec-fetch-site": "same-origin",
-          "sec-fetch-mode": "no-cors",
-          "sec-fetch-dest": "script",
-          referer: "https://dualshield6.deepnetsecurity.com/dac/",
-          "accept-encoding": "gzip, deflate, br",
-          "accept-language": "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-          cookie:
-            "JSESSIONID=49EE8EDF9BF4A4444F3D4FBDCB57DF74; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-        },
-      }
-    );
-    response = http.get(
-      "https://dualshield6.deepnetsecurity.com/dac/scripts.c707374377f6fc38654b.js",
-      {
-        headers: {
-          "user-agent":
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-          accept: "*/*",
-          "sec-fetch-site": "same-origin",
-          "sec-fetch-mode": "no-cors",
-          "sec-fetch-dest": "script",
-          referer: "https://dualshield6.deepnetsecurity.com/dac/",
-          "accept-encoding": "gzip, deflate, br",
-          "accept-language": "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-          cookie:
-            "JSESSIONID=49EE8EDF9BF4A4444F3D4FBDCB57DF74; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-        },
-      }
-    );
-    response = http.get(
-      "https://dualshield6.deepnetsecurity.com/dac/main.62945a358109726dea06.js",
-      {
-        headers: {
-          "user-agent":
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-          accept: "*/*",
-          "sec-fetch-site": "same-origin",
-          "sec-fetch-mode": "no-cors",
-          "sec-fetch-dest": "script",
-          referer: "https://dualshield6.deepnetsecurity.com/dac/",
-          "accept-encoding": "gzip, deflate, br",
-          "accept-language": "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-          cookie:
-            "JSESSIONID=49EE8EDF9BF4A4444F3D4FBDCB57DF74; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-        },
-      }
-    );
+
+
     response = http.get(
       "https://dualshield6.deepnetsecurity.com/dac/api/userinfo",
       {
@@ -1180,24 +654,7 @@ export default function () {
         },
       }
     );
-    response = http.get(
-      "https://dualshield6.deepnetsecurity.com/dac/assets/img/favicon.png",
-      {
-        headers: {
-          "user-agent":
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36",
-          accept: "image/webp,image/apng,image/*,*/*;q=0.8",
-          "sec-fetch-site": "same-origin",
-          "sec-fetch-mode": "no-cors",
-          "sec-fetch-dest": "image",
-          referer: "https://dualshield6.deepnetsecurity.com/dac/",
-          "accept-encoding": "gzip, deflate, br",
-          "accept-language": "en-GB,en-US;q=0.9,en;q=0.8,zh-CN;q=0.7,zh;q=0.6",
-          cookie:
-            "JSESSIONID=49EE8EDF9BF4A4444F3D4FBDCB57DF74; _ga=GA1.2.56999225.1370876930; experimentation_subject_id=IjJhNGMxZTM4LTU2N2ItNDNhYy05Yjc1LThmMzMwOGRkNWRlZSI%3D--0b6d6289ea2fc3e4af8368d58879673d784bcede; GLOWROOT_SESSION_ID=a061bmel7h7v0628ell8d4gfb5",
-        },
-      }
-    );
+
   });
 
   sleep(1);
