@@ -1,11 +1,11 @@
-import { sleep, group } from "k6";
+import { sleep, group, check } from "k6";
 import http from "k6/http";
 
 export const options = {};
 
 export default function () {
-  let response;
-  response = http.get("https://dualshield6.bletchley16.com:8073/dac/app?ep=/",
+  let res;
+  res = http.get("https://dualshield6.bletchley16.com:8073/dac/app?ep=/",
         {
           headers: {
             "user-agent":
@@ -17,5 +17,8 @@ export default function () {
             "sec-fetch-dest": "document",
           },
         });
+  check(res, {
+    "is status 200": (r) => r.status === 200
+  });     
   sleep(1);
 }
