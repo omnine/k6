@@ -1,11 +1,12 @@
 import { sleep, group, check } from "k6";
+import {parseHTML} from "k6/html";
 import http from "k6/http";
 
 export const options = {};
 
 export default function () {
-  let res;
-  res = http.get("https://dualshield6.bletchley16.com:8073/dac/app?ep=/",
+    let res;
+    res = http.get("https://dualshield6.bletchley16.com:8073/dac/app?ep=/",
         {
           headers: {
             "user-agent":
@@ -17,8 +18,24 @@ export default function () {
             "sec-fetch-dest": "document",
           },
         });
-  check(res, {
+    check(res, {
     "is status 200": (r) => r.status === 200
-  });     
-  sleep(1);
+    });  
+    sleep(1);
+  
+    const doc = parseHTML(res.body);  // equivalent to res.html()
+    const form = doc.find('form');
+    const urlsso = form.attr('action');
+    console.log(urlsso);
+    const data = form.children();   //Selection
+    let saml = new Object();
+    data.each(function(idx, item){
+//            console.log(item.getAttribute('name'));
+        saml[item.getAttribute('name')] = item.getAttribute('value');
+    });
+
+    let headers = {'Content-Type': 'application/x-www-form-urlencoded'};
+
+    res = http.post(urlsso, saml, {headers: headers});
+  
 }
