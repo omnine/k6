@@ -21,12 +21,12 @@ export default function () {
     check(res, {
     "is status 200": (r) => r.status === 200
     });  
-    sleep(1);
+    //sleep(1);
   
     const doc = parseHTML(res.body);  // equivalent to res.html()
     const form = doc.find('form');
     const urlsso = form.attr('action');
-    console.log(urlsso);
+//    console.log(urlsso);
     const data = form.children();   //Selection
     let saml = new Object();
     data.each(function(idx, item){
