@@ -1,0 +1,53 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.7
+    hostname: mysql
+    restart: always
+    ports:
+      # <Port exposed> : < MySQL Port running inside container>
+      - '3306:3306'
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
+    # Where our data will be persisted
+    volumes:
+    - /opt/dualshield/mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: changeit
+      MYSQL_DATABASE: dualshield
+  
+  das:
+    depends_on:
+    - mysql
+    restart: always    
+    image: nexus.deepnetsecurity.local/dualshield:latest
+    hostname: das
+    volumes:
+    - /opt/dualshield/jre/cacerts:$JAVA_HOME/lib/security/cacerts
+    ports:
+    - "8070:8070"
+    - "8073:8073"
+    - "8074:8074"
+    - "8075:8075"
+    - "8076:8076"
+    - "8080:8080"    
+    - "8090:9000"
+    - "9090:9090"
+    - "4000:4000"
+    extra_hosts:
+    - "test.dualshield-dev.com:127.0.0.1"
+    entrypoint: /bin/bash /bin/wait-for-it.sh mysql:3306 -s -t 0 -- /usr/local/tomcat/entrypoint.sh
+
+    environment:
+      CATALINA_OPTS: -Xmx1524M -Xbootclasspath/p:/usr/local/lib/alpn-boot-8.1.13.v20181017.jar -javaagent:/usr/local/glowroot/glowroot.jar -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9090 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=9000
+      DUALSHIELD_FQDN: test.dualshield-dev.com
+
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 3300:8080
+    environment:
+      ADMINER_DEFAULT_SERVER: mysql
