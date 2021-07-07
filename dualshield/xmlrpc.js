@@ -44,13 +44,16 @@ const csvData = new SharedArray("nanostore", function() {
 
 
 export const options = {
+    /*
+    //port 8074 doesn't need to do client certificate authentication
   tlsAuth: [
     {
       domains: ['bletchley19.com'],
       cert: CERT,
       key: KEY,
     },
-  ],    
+  ], 
+*/  
   stages: [
     { target: 100, duration: '5m' }
   ],
@@ -62,6 +65,42 @@ export const options = {
 export default function () {
  
   var url = 'https://nano190013.bletchley19.com:8074/sso/xmlrpc';
+  
+  /*
+  sample load for type outlookAnywhere
+{
+    "application":
+    {
+       "name":"iis"
+    },
+    "user":
+    {
+         "loginName": "james.zeng@bletchley16.com"
+    },
+    "credential":
+    {
+         "method":"MOBDNA",
+         "devicePrint":"deviceId",
+         "userAgent":"ua",
+         "os":"os"
+    },
+    "remoteIp":"127.0.0.1",
+    "requireSession":false,
+    "procedureType":"ACTIVE_SYNC",
+    "callingServer":"iis server name",
+    "returnUserInfo":
+    [
+        "loginName",
+        "status",
+        "userPrincipalName",
+        "domain.netbiosName",
+        "domain.dnsName",
+        "email"
+    ]
+}  
+  
+  
+  */
 
     //payload should be random generated,  for different users and different types
     // https://k6.io/docs/examples/data-parameterization/
@@ -71,6 +110,7 @@ export default function () {
     
   // Now you can use the CSV data in your test logic below.
   // Below are some examples of how you can access the CSV data.
+  // the csv should contain username, deviceId,
 
   // Loop through all username/password pairs
   for (var userPwdPair of csvData) {
@@ -82,7 +122,39 @@ export default function () {
   // add random type
   console.log('Random user: ', JSON.stringify(randomUser));
 
-  const params = {
+  let params = {
+    application:
+    {
+       name:"iis"   // replace with the actual name 
+    },
+    user:
+    {
+         loginName: randomUser.username //"james.zeng@bletchley16.com"
+    },
+    credential:
+    {
+         method:"MOBDNA",
+         devicePrint:randomUser.deviceId,
+         userAgent:"ua",
+         os:"Windows"
+    },
+    remoteIp:"127.0.0.1",
+    requireSession:false,
+    procedureType:"ACTIVE_SYNC",    //what should it be?
+    callingServer:"k6",             //need to match IIS server?
+    returnUserInfo:
+    [
+        "loginName",
+        "status",
+        "userPrincipalName",
+        "domain.netbiosName",
+        "domain.dnsName",
+        "email"
+    ]      
+      
+      
+      
+      
     login: randomUser.username,
     password: randomUser.password,
   };
