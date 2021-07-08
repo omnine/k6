@@ -4,7 +4,10 @@ import { Counter } from 'k6/metrics';
 import papaparse from './papaparse.min.js';
 import { SharedArray } from "k6/data";
 
-
+// Something you need to replace in your test
+// 1 - Application
+const dsApplication = 'iis';
+const requestor = 'K6';
 // https://k6.io/docs/using-k6/protocols/ssl-tls/ssl-tls-client-certificates/
 const CERT = `-----BEGIN CERTIFICATE-----
 MIIFgTCCA2kCAQEwDQYJKoZIhvcNAQEFBQAwgYExCzAJBgNVBAYTAlNFMRcwFQYD
@@ -67,7 +70,8 @@ export const options = {
       key: KEY,
     },
   ], 
-*/  
+*/
+  insecureSkipTLSVerify: true,  //ignore custom CA
   stages: [
     { target: 100, duration: '5m' }
   ],
@@ -81,19 +85,12 @@ export default function () {
   var url = 'https://nano190013.bletchley19.com:8074/sso/xmlrpc';
   
   // https://k6.io/docs/examples/data-parameterization/
-    //In reality, the test users should be exported from AD  to a CSV file, then K6 read it
+  //In reality, the test users should be exported from AD, then save them along with their device IDs into a csv file which K6 reads from
     
-    
-  // Now you can use the CSV data in your test logic below.
-  // Below are some examples of how you can access the CSV data.
   // the csv should contain username, deviceId,
 
-  // Loop through all username/password pairs
-  for (var userPwdPair of csvData) {
-    console.log(JSON.stringify(userPwdPair));
-  }
 
-  // Pick a random username/password pair
+  // Pick a random username
   let randomUser = csvData[Math.floor(Math.random() * csvData.length)];
   // add random type
   console.log('Random user: ', JSON.stringify(randomUser));
@@ -101,11 +98,11 @@ export default function () {
   let params = {
     application:
     {
-       name:"iis"   // replace with the actual name 
+       name:dsApplication   // defined at the beginning 
     },
     user:
     {
-         loginName: randomUser.username //"james.zeng@bletchley16.com"
+         loginName: randomUser.username // selected randomly
     },
     credential:
     {
@@ -114,10 +111,10 @@ export default function () {
          userAgent:"ua",
          os:"Windows"
     },
-    remoteIp:"127.0.0.1",
+    remoteIp: "127.0.0.1",   //Ideally it should also be random
     requireSession:false,
-    procedureType:"ACTIVE_SYNC",    //what should it be?
-    callingServer:"k6",             //need to match IIS server?
+    procedureType: "ACTIVE_SYNC",    //what should it be?
+    callingServer: requestor,             //need to match IIS server?
     returnUserInfo:
     [
         "loginName",
@@ -138,5 +135,6 @@ export default function () {
 
   const checkRes = check(res, {
     'status is 200': (r) => r.status === 200,
+    'methodResponse is present': (r) => r.body.indexOf('methodResponse') !== -1,
   });
 }

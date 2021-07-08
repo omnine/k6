@@ -4,6 +4,9 @@
 ## Debug
 *k6 run script.js --http-debug="full"*
 
+## Custom CA
+k6 run --insecure-skip-tls-verify xmlrpc.js
+
 ## Load Test
 *k6 run -u 10 -d 30s script.js*
 
@@ -13,4 +16,6 @@ It is hard the keep the same folder structure in docker. we use [docker-compose]
 ## poolperf
 
 The Javalin API server and K6 script to check the relationship between thread pool and rps (and response time), the Little's Law.
+
+
 
