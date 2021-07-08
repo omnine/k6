@@ -80,48 +80,7 @@ export default function () {
  
   var url = 'https://nano190013.bletchley19.com:8074/sso/xmlrpc';
   
-
-
-  
-  /*
-  sample load for type outlookAnywhere
-{
-    "application":
-    {
-       "name":"iis"
-    },
-    "user":
-    {
-         "loginName": "james.zeng@bletchley16.com"
-    },
-    "credential":
-    {
-         "method":"MOBDNA",
-         "devicePrint":"deviceId",
-         "userAgent":"ua",
-         "os":"os"
-    },
-    "remoteIp":"127.0.0.1",
-    "requireSession":false,
-    "procedureType":"ACTIVE_SYNC",
-    "callingServer":"iis server name",
-    "returnUserInfo":
-    [
-        "loginName",
-        "status",
-        "userPrincipalName",
-        "domain.netbiosName",
-        "domain.dnsName",
-        "email"
-    ]
-}  
-  
-  
-  */
-
-    //payload should be random generated,  for different users and different types
-    // https://k6.io/docs/examples/data-parameterization/
-    //https://dev.to/k6/performance-testing-with-generated-data-using-k6-and-faker-2e
+  // https://k6.io/docs/examples/data-parameterization/
     //In reality, the test users should be exported from AD  to a CSV file, then K6 read it
     
     
@@ -167,15 +126,9 @@ export default function () {
         "domain.netbiosName",
         "domain.dnsName",
         "email"
-    ]      
-      
-      
-      
-      
-    login: randomUser.username,
-    password: randomUser.password,
+    ],      
   };
-  console.log('Random user: ', JSON.stringify(params));    
+//  console.log('Random user: ', JSON.stringify(params));    
     
    let payload = payload1 + JSON.stringify(params) + payload3;  //raw payload
   // our HTTP request, note that we are saving the response to res, which can be accessed later
