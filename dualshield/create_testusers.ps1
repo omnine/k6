@@ -4,8 +4,8 @@ $start=10000
 $index = 1
 
 Write-Host "creating a csv file using add content method"
-$location="testusers.csv"
-Add-Content -Path $location   -Value '"username","deviceId"'
+$location="E:\work\k6\dualshield\testusers.csv"
+Add-Content -Path $location   -Value 'username,deviceId'
 
 Do
 {
@@ -15,8 +15,8 @@ Do
 
    
     $guid = [guid]::NewGuid().ToString().ToUpperInvariant();
-    
-    $wl = "$firstname.$lastname@$domain, $guid"
+    #@$domain
+    $wl = "$firstname.$lastname, $guid"
     
     Add-Content -Path  $location -Value $wl
 
