@@ -38,6 +38,20 @@ const csvData = new SharedArray("nanostore", function() {
 });
 
 
+const payload1 = `<?xml version="1.0"?>
+<methodCall>
+   <methodName>das.jsonCall</methodName>
+      <params>
+         <param>
+            <value><string>outlookAnywhere</string></value>
+            <value><string>`;
+
+const payload3 = `</string></value>
+         </param>
+      </params>
+</methodCall>`;
+
+
 // you can specify stages of your test (ramp up/down patterns) through the options object
 // target is the number of VUs you are aiming for
 
@@ -65,6 +79,9 @@ export const options = {
 export default function () {
  
   var url = 'https://nano190013.bletchley19.com:8074/sso/xmlrpc';
+  
+
+
   
   /*
   sample load for type outlookAnywhere
@@ -160,9 +177,9 @@ export default function () {
   };
   console.log('Random user: ', JSON.stringify(params));    
     
-   
+   let payload = payload1 + JSON.stringify(params) + payload3;  //raw payload
   // our HTTP request, note that we are saving the response to res, which can be accessed later
-  const res = http.post(url, params);
+  const res = http.post(url, payload);
   
   sleep(1);
 
