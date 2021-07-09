@@ -3,6 +3,7 @@ $total=20
 $start=10000
 $index = 1
 
+#https://www.educba.com/powershell-export-csv/
 Write-Host "creating a csv file using add content method"
 $location="E:\work\k6\dualshield\testusers.csv"
 Add-Content -Path $location   -Value 'username,deviceId'

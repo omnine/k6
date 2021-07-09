@@ -72,6 +72,70 @@ export const options = {
   ], 
 */
   insecureSkipTLSVerify: true,  //ignore custom CA
+  
+  /*
+  
+  Test Types: https://k6.io/docs/test-types/introduction/
+  
+  Smoke 
+    vus: 1, // 1 user looping for 1 minute
+    duration: '1m',
+    
+  Load test
+  
+    stages: [
+    { duration: '5m', target: 100 }, // simulate ramp-up of traffic from 1 to 100 users over 5 minutes.
+    { duration: '10m', target: 100 }, // stay at 100 users for 10 minutes
+    { duration: '5m', target: 0 }, // ramp-down to 0 users
+  ],
+  
+    stages: [
+    { duration: '5m', target: 60 }, // simulate ramp-up of traffic from 1 to 60 users over 5 minutes.
+    { duration: '10m', target: 60 }, // stay at 60 users for 10 minutes
+    { duration: '3m', target: 100 }, // ramp-up to 100 users over 3 minutes (peak hour starts)
+    { duration: '2m', target: 100 }, // stay at 100 users for short amount of time (peak hour)
+    { duration: '3m', target: 60 }, // ramp-down to 60 users over 3 minutes (peak hour ends)
+    { duration: '10m', target: 60 }, // continue at 60 for additional 10 minutes
+    { duration: '5m', target: 0 }, // ramp-down to 0 users
+  ],
+  
+  
+  Stress test
+  
+    stages: [
+    { duration: '2m', target: 100 }, // below normal load
+    { duration: '5m', target: 100 },
+    { duration: '2m', target: 200 }, // normal load
+    { duration: '5m', target: 200 },
+    { duration: '2m', target: 300 }, // around the breaking point
+    { duration: '5m', target: 300 },
+    { duration: '2m', target: 400 }, // beyond the breaking point
+    { duration: '5m', target: 400 },
+    { duration: '10m', target: 0 }, // scale down. Recovery stage.
+  ],
+  
+  Spike test
+  
+    stages: [
+    { duration: '10s', target: 100 }, // below normal load
+    { duration: '1m', target: 100 },
+    { duration: '10s', target: 1400 }, // spike to 1400 users
+    { duration: '3m', target: 1400 }, // stay at 1400 for 3 minutes
+    { duration: '10s', target: 100 }, // scale down. Recovery stage.
+    { duration: '3m', target: 100 },
+    { duration: '10s', target: 0 },
+  ],
+  
+  Soaking test
+  
+    stages: [
+    { duration: '2m', target: 400 }, // ramp up to 400 users
+    { duration: '3h56m', target: 400 }, // stay at 400 for ~4 hours
+    { duration: '2m', target: 0 }, // scale down. (optional)
+  ],
+  
+  */
+  
   stages: [
     { target: 100, duration: '5m' }
   ],
