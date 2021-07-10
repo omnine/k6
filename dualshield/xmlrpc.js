@@ -7,30 +7,10 @@ import { SharedArray } from "k6/data";
 // Something you need to replace in your test
 // 1 - Application
 const dsApplication = 'iis';
+const testURL = 'https://nano190013.bletchley19.com:8074/sso/xmlrpc';
 const requestor = 'K6';
-// https://k6.io/docs/using-k6/protocols/ssl-tls/ssl-tls-client-certificates/
-const CERT = `-----BEGIN CERTIFICATE-----
-MIIFgTCCA2kCAQEwDQYJKoZIhvcNAQEFBQAwgYExCzAJBgNVBAYTAlNFMRcwFQYD
-VQQIEw5TdG9ja2hvbG1zIExhbjESMBAGA1UEBxMJU3RvY2tob2xtMRcwFQYDVQQK
-...
-/n5QrTGhP51P9Q1THzRfn6cNCDwzSTMVEJr40QhuTJQWASe3miuFmZoG5ykmGqVm
-fWQRiQyM330s9vTwFy14J2Bxe4px6cyy7rVXvYL2LvfA4L0T7/x1nUULw+Mpqun1
-R3XRJWqGDjBKXr5q8VatdQO1QLgr
------END CERTIFICATE-----`;
-
-const KEY = `-----BEGIN RSA PRIVATE KEY-----
-KsZVVI1FTX+F959vqu1S02T+R1JM29PkIfJILIXapKQfb0FWrALU5xpipdPYBWp7
-j5iSp06/7H8ms87Uz9BrOA6rytoRSE0/wEe5WkWdBBgLLPpfOSWZsAA5RGCB2n+N
-...
-Dk+frzKuiErHFN7HOHAQannui4eLsY0ehYMByowgJIUGzIJyXR6O19hVhV7Py66u
-X7/Jy01JXn83LuWdpaPAKU+B42BLP0IGXt5CocPms07HOdtJ/wm2zwHTyfjn9vu+
-HO/dQr6a7DhRu2lLI9Sc983NwRqDKICZQQ/+gqWk8BgQZ1yI9O4AYkzywzAEk3py
------END RSA PRIVATE KEY-----`;
 
 
-// A simple counter for http requests
-
-export const requests = new Counter('http_reqs');
 
 // not using SharedArray here will mean that the code in the function call (that is what loads and
 // parses the csv) will be executed per each VU which also means that there will be a complete copy
@@ -40,7 +20,7 @@ const csvData = new SharedArray("nanostore", function() {
     return papaparse.parse(open('./testusers.csv'), { header: true }).data;
 });
 
-
+// template strings to construct the xmlrpc request bosy
 const payload1 = `<?xml version="1.0"?>
 <methodCall>
    <methodName>das.jsonCall</methodName>
@@ -55,33 +35,25 @@ const payload3 = `</string></value>
 </methodCall>`;
 
 
-// you can specify stages of your test (ramp up/down patterns) through the options object
-// target is the number of VUs you are aiming for
+
 
 
 
 export const options = {
-    /*
-    //port 8074 doesn't need to do client certificate authentication
-  tlsAuth: [
-    {
-      domains: ['bletchley19.com'],
-      cert: CERT,
-      key: KEY,
-    },
-  ], 
-*/
   insecureSkipTLSVerify: true,  //ignore custom CA
   
   /*
+// you can specify stages of your test (ramp up/down patterns) through the options object
+// target is the number of VUs you are aiming for  
   
   Test Types: https://k6.io/docs/test-types/introduction/
   
-  Smoke 
+  Suggestion
+  Smoke test:
     vus: 1, // 1 user looping for 1 minute
     duration: '1m',
     
-  Load test
+  Load test:
   
     stages: [
     { duration: '5m', target: 100 }, // simulate ramp-up of traffic from 1 to 100 users over 5 minutes.
@@ -100,7 +72,7 @@ export const options = {
   ],
   
   
-  Stress test
+  Stress test:
   
     stages: [
     { duration: '2m', target: 100 }, // below normal load
@@ -114,7 +86,7 @@ export const options = {
     { duration: '10m', target: 0 }, // scale down. Recovery stage.
   ],
   
-  Spike test
+  Spike test:
   
     stages: [
     { duration: '10s', target: 100 }, // below normal load
@@ -126,7 +98,7 @@ export const options = {
     { duration: '10s', target: 0 },
   ],
   
-  Soaking test
+  Soaking test:
   
     stages: [
     { duration: '2m', target: 400 }, // ramp up to 400 users
@@ -137,27 +109,21 @@ export const options = {
   */
   
   stages: [
-    { target: 100, duration: '5m' }
+    { duration: '2m', target: 200 }, // simulate ramp-up of traffic from 1 to 100 users over 2 minutes.
+    { duration: '10m', target: 200 }, // stay at 200 users for 10 minutes
+    { duration: '3m', target: 0 }, // ramp-down to 0 users
   ],
   thresholds: {
-    http_req_duration: ['p(95)<2200'], // 99% of requests must complete below 2.2s
+    http_req_duration: ['p(95)<4000'], // 95% of requests must complete below 4.0s
   },
 };
 
 export default function () {
- 
-  var url = 'https://nano190013.bletchley19.com:8074/sso/xmlrpc';
-  
+
   // https://k6.io/docs/examples/data-parameterization/
-  //In reality, the test users should be exported from AD, then save them along with their device IDs into a csv file which K6 reads from
-    
-  // the csv should contain username, deviceId,
 
-
-  // Pick a random username
+  // Pick a random user
   let randomUser = csvData[Math.floor(Math.random() * csvData.length)];
-  // add random type
-  console.log('Random user: ', JSON.stringify(randomUser));
 
   let params = {
     application:
@@ -189,11 +155,11 @@ export default function () {
         "email"
     ],      
   };
-//  console.log('Random user: ', JSON.stringify(params));    
+
     
    let payload = payload1 + JSON.stringify(params) + payload3;  //raw payload
   // our HTTP request, note that we are saving the response to res, which can be accessed later
-  const res = http.post(url, payload);
+  const res = http.post(testURL, payload);
   
   sleep(1);
 
